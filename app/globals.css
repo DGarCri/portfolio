@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fbf7f1;
+  --color-sand: #f2e9dd;
+  --color-line: #e7dccd;
+  --color-ink: #1d1a17;
+  --color-muted: #6b6259;
+  --color-accent: #e2552e;
+  --color-accent-soft: #fde4d8;
+  --color-leaf: #2f7d5b;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-inter), ui-sans-serif, sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Aparición suave al hacer scroll (ver components/Reveal.tsx). Solo con JS activo,
+   para que el contenido nunca se quede oculto. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--delay, 0ms);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.float { animation: float 6s ease-in-out infinite; }
+.float-delay { animation: float 6s ease-in-out 1.5s infinite; }
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+.marquee { animation: marquee 32s linear infinite; }
+
+@keyframes pulse-dot {
+  0% { box-shadow: 0 0 0 0 rgb(47 125 91 / 0.5); }
+  100% { box-shadow: 0 0 0 10px rgb(47 125 91 / 0); }
+}
+.pulse-dot { animation: pulse-dot 1.8s ease-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .float, .float-delay, .marquee, .pulse-dot { animation: none; }
+}
