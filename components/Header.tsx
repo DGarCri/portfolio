@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -33,9 +34,14 @@ export function Header() {
     >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a href="#inicio" className="group flex items-center gap-2.5" onClick={() => setOpen(false)}>
-          <span className="grid size-9 place-items-center rounded-full bg-ink font-display text-sm font-bold text-paper transition-transform group-hover:rotate-[-8deg]">
-            DG
-          </span>
+          <Image
+            src="/logo.png"
+            alt="Logo de Daniel García"
+            width={160}
+            height={160}
+            priority
+            className="size-10 rounded-xl transition-transform group-hover:rotate-[-6deg]"
+          />
           <span className="font-display text-[1.05rem] font-semibold tracking-tight">Daniel García</span>
         </a>
 
