@@ -93,6 +93,8 @@ export type TimelineItem = {
   title: string;
   place: string;
   badge?: string;
+  /** Logo de la empresa o centro (ruta en /public). */
+  logo?: string;
   points: string[];
 };
 
@@ -110,6 +112,7 @@ export const experience: TimelineItem[] = [
     period: "Mar 2026 – Jun 2026",
     title: "Desarrollador frontend (Shopware)",
     place: "Hob-by-Horse · Osnabrück, Alemania",
+    logo: "/empresas/hob-by-horse.png",
     points: [
       "Desarrollo frontend de tienda online con Shopware.",
       "Tres meses trabajando en una empresa alemana, en un entorno internacional y en inglés.",
@@ -149,5 +152,5 @@ export const skills: { group: string; items: string[] }[] = [
 
 export const languages = [
   { name: "Español", level: "Nativo" },
-  { name: "Inglés", level: "B2 · usado a diario trabajando en Alemania" },
+  { name: "Inglés", level: "Avanzado · usado a diario trabajando en Alemania" },
 ];

@@ -30,8 +30,21 @@ function Timeline({ items }: { items: TimelineItem[] }) {
                 <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-semibold text-accent">{item.badge}</span>
               )}
             </div>
-            <h3 className="mt-2 font-display text-xl font-semibold leading-snug tracking-tight sm:text-2xl">{item.title}</h3>
-            <p className="mt-1 text-[0.95rem] text-muted">{item.place}</p>
+            <div className="mt-2 flex items-start gap-4">
+              {item.logo && (
+                <Image
+                  src={item.logo}
+                  alt=""
+                  width={120}
+                  height={120}
+                  className="size-12 shrink-0 rounded-xl border border-line bg-white object-contain p-2"
+                />
+              )}
+              <div>
+                <h3 className="font-display text-xl font-semibold leading-snug tracking-tight sm:text-2xl">{item.title}</h3>
+                <p className="mt-1 text-[0.95rem] text-muted">{item.place}</p>
+              </div>
+            </div>
             {item.points.length > 0 && (
               <ul className="mt-4 space-y-1.5 text-[0.95rem] leading-relaxed">
                 {item.points.map((p) => (
@@ -116,7 +129,7 @@ export default function Home() {
               {[
                 { k: "3", v: "proyectos publicados" },
                 { k: "3 meses", v: "en una empresa alemana" },
-                { k: "B2", v: "de inglés" },
+                { k: "Avanzado", v: "nivel de inglés" },
                 { k: "2", v: "títulos de grado superior en desarrollo" },
               ].map((s) => (
                 <div key={s.v} className="bg-paper p-5 sm:p-6">
@@ -173,11 +186,13 @@ export default function Home() {
                   intro="Trabajé tres meses en Alemania desarrollando el frontend de una tienda online con Shopware. Desde entonces hago webs y apps para negocios."
                 />
                 <Reveal delay={150} className="mt-8 flex items-center gap-4 rounded-2xl border border-line bg-paper p-4">
-                  <span className="flex h-9 w-12 shrink-0 flex-col overflow-hidden rounded-md shadow-sm" aria-hidden>
-                    <span className="flex-1 bg-black" />
-                    <span className="flex-1 bg-[#dd0000]" />
-                    <span className="flex-1 bg-[#ffce00]" />
-                  </span>
+                  <Image
+                    src="/empresas/hob-by-horse.png"
+                    alt="Logo de Hob-by-Horse"
+                    width={120}
+                    height={120}
+                    className="size-14 shrink-0 rounded-xl border border-line bg-white object-contain p-2.5"
+                  />
                   <p className="text-sm leading-relaxed text-muted">
                     <strong className="block text-base text-ink">Hob-by-Horse · Osnabrück</strong>
                     Tres meses de trabajo en un equipo internacional, en inglés.
