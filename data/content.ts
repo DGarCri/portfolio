@@ -8,6 +8,7 @@ export const profile = {
   email: "dani2005gc@gmail.com",
   linkedin: "https://www.linkedin.com/in/daniel-garc%C3%ADa-cristellys-a72488362/",
   github: "https://github.com/DGarCri",
+  whatsapp: "https://wa.me/34638420863",
 };
 
 export type Project = {
@@ -45,27 +46,6 @@ export const projects: Project[] = [
     accent: "#7a1f35",
   },
   {
-    slug: "confirma",
-    kicker: "Aplicación web (SaaS)",
-    title: "Confirma",
-    summary:
-      "App para profesionales que trabajan con cita: confirman cada cita por WhatsApp, cobran la señal por Bizum y ven de un vistazo quién no ha confirmado. La diseñé, la programé y la desplegué yo solo.",
-    highlights: [
-      "Panel «Para hacer ahora» con recordatorios y citas sin confirmar",
-      "Autenticación propia y suscripciones con Stripe",
-      "Instalable en el móvil (PWA) y con tests automáticos",
-    ],
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Stripe"],
-    links: [
-      { label: "Ver el código", href: "https://github.com/DGarCri/confirma-app", primary: true },
-      { label: "Abrir la app", href: "https://confirma-chi.vercel.app" },
-    ],
-    previewUrl: "confirma-chi.vercel.app",
-    desktop: "/proyectos/confirma-desktop.webp",
-    mobile: "/proyectos/confirma-mobile.webp",
-    accent: "#a8416a",
-  },
-  {
     slug: "beauty-studio",
     kicker: "Propuesta de diseño web",
     title: "Beauty Studio MB",
@@ -85,6 +65,26 @@ export const projects: Project[] = [
     desktop: "/proyectos/beauty-studio-desktop.webp",
     mobile: "/proyectos/beauty-studio-mobile.webp",
     accent: "#5b4636",
+  },
+  {
+    slug: "confirma",
+    kicker: "Aplicación web (SaaS)",
+    title: "Confirma",
+    summary:
+      "App para profesionales que trabajan con cita: confirman cada cita por WhatsApp, cobran la señal por Bizum y ven de un vistazo quién no ha confirmado. La diseñé, la programé y la desplegué yo solo.",
+    highlights: [
+      "Panel «Para hacer ahora» con recordatorios y citas sin confirmar",
+      "Autenticación propia y suscripciones con Stripe",
+      "Instalable en el móvil (PWA) y con tests automáticos",
+    ],
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "PostgreSQL", "Stripe"],
+    links: [
+      { label: "Ver el código en GitHub", href: "https://github.com/DGarCri/confirma-app", primary: true },
+    ],
+    previewUrl: "github.com/DGarCri/confirma-app",
+    desktop: "/proyectos/confirma-desktop.webp",
+    mobile: "/proyectos/confirma-mobile.webp",
+    accent: "#a8416a",
   },
 ];
 
@@ -108,9 +108,8 @@ export const experience: TimelineItem[] = [
   },
   {
     period: "Mar 2026 – Jun 2026",
-    title: "Desarrollador frontend (Shopware) en prácticas",
+    title: "Desarrollador frontend (Shopware)",
     place: "Hob-by-Horse · Osnabrück, Alemania",
-    badge: "Erasmus+",
     points: [
       "Desarrollo frontend de tienda online con Shopware.",
       "Tres meses trabajando en una empresa alemana, en un entorno internacional y en inglés.",
@@ -130,7 +129,7 @@ export const education: TimelineItem[] = [
     period: "2024 – 2026",
     title: "Técnico Superior en Desarrollo de Aplicaciones Web (DAW)",
     place: "IES Clara del Rey · Madrid",
-    points: ["Prácticas en empresa con beca Erasmus+ en Alemania."],
+    points: [],
   },
   {
     period: "2021 – 2023",
@@ -150,5 +149,5 @@ export const skills: { group: string; items: string[] }[] = [
 
 export const languages = [
   { name: "Español", level: "Nativo" },
-  { name: "Inglés", level: "B2 · usado a diario durante el Erasmus" },
+  { name: "Inglés", level: "B2 · usado a diario trabajando en Alemania" },
 ];

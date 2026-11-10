@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowDown, ArrowUpRight, Github, GraduationCap, Linkedin, Mail, MapPin, Plane } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Code2, Github, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Header } from "@/components/Header";
 import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { Reveal } from "@/components/Reveal";
@@ -62,23 +62,17 @@ export default function Home() {
           />
           <div className="grid items-center gap-12 lg:grid-cols-12">
             <div className="order-2 lg:order-1 lg:col-span-7">
-              <Reveal>
-                <p className="inline-flex items-center gap-2.5 rounded-full border border-line bg-white/70 px-3.5 py-1.5 text-sm">
-                  <span className="pulse-dot size-2 rounded-full bg-leaf" />
-                  Disponible para prácticas · {profile.location}
-                </p>
-              </Reveal>
               <Reveal delay={80}>
-                <h1 className="mt-6 font-display text-[2.75rem] font-bold leading-[1] tracking-tight sm:text-6xl lg:text-7xl">
+                <h1 className="font-display text-[2.75rem] font-bold leading-[1] tracking-tight sm:text-6xl lg:text-7xl">
                   Hago webs y apps que dan{" "}
                   <span className="font-serif font-normal italic text-accent">ganas</span> de usar.
                 </h1>
               </Reveal>
               <Reveal delay={160}>
                 <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted sm:text-xl">
-                  Soy <strong className="font-semibold text-ink">Daniel García</strong>, técnico superior en DAW y
-                  estudiante de DAM. He trabajado como desarrollador frontend en Alemania y construyo proyectos reales
-                  con React, Next.js y Tailwind CSS.
+                  Soy <strong className="font-semibold text-ink">Daniel García</strong>, desarrollador de páginas web y
+                  aplicaciones en {profile.location}. He trabajado como desarrollador frontend en una empresa de Alemania y
+                  creo webs y apps para negocios con React, Next.js y Tailwind CSS.
                 </p>
               </Reveal>
               <Reveal delay={240} className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -104,16 +98,13 @@ export default function Home() {
                   src="/daniel.webp"
                   alt="Daniel García Cristellys"
                   width={900}
-                  height={900}
+                  height={1200}
                   priority
                   sizes="(min-width: 1024px) 384px, 288px"
-                  className="relative aspect-square w-full rounded-[2.5rem] object-cover"
+                  className="relative aspect-[4/5] w-full rounded-[2.5rem] object-cover object-[center_25%]"
                 />
-                <div className="float absolute -left-6 top-6 flex items-center gap-2 rounded-2xl border border-line bg-white px-3 py-2 text-sm font-medium shadow-lg sm:-left-12">
-                  <Plane className="size-4 text-accent" /> Erasmus+ en Alemania
-                </div>
                 <div className="float-delay absolute -bottom-5 -right-3 flex items-center gap-2 rounded-2xl border border-line bg-white px-3 py-2 text-sm font-medium shadow-lg sm:-right-8">
-                  <GraduationCap className="size-4 text-leaf" /> DAW · DAM
+                  <Code2 className="size-4 text-accent" /> Desarrollador de webs y apps
                 </div>
               </div>
             </Reveal>
@@ -126,7 +117,7 @@ export default function Home() {
                 { k: "3", v: "proyectos publicados" },
                 { k: "3 meses", v: "en una empresa alemana" },
                 { k: "B2", v: "de inglés" },
-                { k: "2", v: "ciclos superiores (DAW + DAM)" },
+                { k: "2", v: "títulos de grado superior en desarrollo" },
               ].map((s) => (
                 <div key={s.v} className="bg-paper p-5 sm:p-6">
                   <dt className="whitespace-nowrap font-display text-3xl font-bold tracking-tight sm:text-[1.75rem] lg:text-4xl">{s.k}</dt>
@@ -179,7 +170,7 @@ export default function Home() {
                       De Osnabrück a <span className="font-serif font-normal italic">Madrid</span>.
                     </>
                   }
-                  intro="Hice mis prácticas de DAW con una beca Erasmus+ en Alemania, desarrollando el frontend de una tienda online con Shopware. Desde entonces hago webs para negocios."
+                  intro="Trabajé tres meses en Alemania desarrollando el frontend de una tienda online con Shopware. Desde entonces hago webs y apps para negocios."
                 />
                 <Reveal delay={150} className="mt-8 flex items-center gap-4 rounded-2xl border border-line bg-paper p-4">
                   <span className="flex h-9 w-12 shrink-0 flex-col overflow-hidden rounded-md shadow-sm" aria-hidden>
@@ -263,16 +254,24 @@ export default function Home() {
             <div className="pointer-events-none absolute -right-24 -top-24 size-80 rounded-full bg-accent/40 blur-3xl" aria-hidden />
             <p className="relative text-xs font-semibold uppercase tracking-[0.2em] text-accent">Contacto</p>
             <h2 className="relative mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-6xl">
-              ¿Tienes un proyecto o una plaza de prácticas?{" "}
+              ¿Necesitas una web o una app?{" "}
               <span className="font-serif font-normal italic text-accent">Hablemos.</span>
             </h2>
             <p className="relative mt-6 max-w-xl text-lg text-paper/70">
-              Te respondo por correo o por LinkedIn. Estoy en Madrid y con muchas ganas de aprender en un equipo.
+              Escríbeme por WhatsApp, por correo o por LinkedIn y te respondo lo antes posible. Estoy en Madrid.
             </p>
             <div className="relative mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
+                href={profile.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-[#25d366] px-7 py-4 font-semibold text-[#0b2e17] transition-transform hover:-translate-y-0.5"
+              >
+                <MessageCircle className="size-5" /> WhatsApp
+              </a>
+              <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-accent px-7 py-4 font-semibold text-white transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2.5 rounded-full border border-paper/20 px-7 py-4 font-semibold transition-colors hover:bg-paper/10"
               >
                 <Mail className="size-5" /> {profile.email}
               </a>

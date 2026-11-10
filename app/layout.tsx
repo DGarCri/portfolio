@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Daniel García · Desarrollador web y multiplataforma",
   description:
-    "Portfolio de Daniel García Cristellys: técnico superior en DAW, estudiante de DAM y desarrollador frontend con experiencia Erasmus+ en Alemania. Proyectos con React, Next.js y Tailwind CSS.",
+    "Portfolio de Daniel García Cristellys: desarrollador de páginas web y aplicaciones en Madrid, con experiencia como desarrollador frontend en Alemania. Proyectos con React, Next.js y Tailwind CSS.",
   openGraph: {
     title: "Daniel García · Desarrollador web y multiplataforma",
-    description: "Webs y apps con React, Next.js y Tailwind CSS. Disponible para prácticas en Madrid.",
-    images: [{ url: "/daniel.webp", width: 900, height: 900, alt: "Daniel García Cristellys" }],
+    description: "Webs y apps con React, Next.js y Tailwind CSS. Desarrollador en Madrid.",
+    images: [{ url: "/daniel-og.webp", width: 900, height: 900, alt: "Daniel García Cristellys" }],
     locale: "es_ES",
     type: "website",
   },
