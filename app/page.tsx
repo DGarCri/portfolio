@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Code2, Github, Linkedin, Mail, MapPin, MessageCircle } from "lucide-react";
 import { Header } from "@/components/Header";
+import { Pricing } from "@/components/Pricing";
 import { ProjectShowcase } from "@/components/ProjectShowcase";
 import { Reveal } from "@/components/Reveal";
 import { education, experience, languages, profile, projects, skills, type TimelineItem } from "@/data/content";
@@ -170,6 +171,8 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <Pricing />
 
         {/* Experiencia */}
         <section id="experiencia" className="border-t border-line bg-sand/50">
